@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'wtp-root',
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
+    <wtp-continent></wtp-continent>
     <mat-card class="top-card">
 
       <mat-card-content>

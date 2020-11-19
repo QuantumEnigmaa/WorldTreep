@@ -4,11 +4,13 @@ import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContinentComponent } from './continent.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContinentComponent
   ],
   imports: [
     BrowserModule,
