@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     <p>
       continent works!
     </p>
+
+
   `,
   styles: [
   ]
