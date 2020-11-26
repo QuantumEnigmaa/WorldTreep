@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContinentComponent } from './continent.component';
 import { SidenavComponent } from './sidenav.component';
+import { FooterComponent } from './footer.component';
+import { NavbarComponent } from './navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContinentComponent,
-    SidenavComponent
+    SidenavComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
