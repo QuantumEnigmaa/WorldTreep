@@ -27,7 +27,7 @@ import { Component, OnInit } from '@angular/core';
             <a class="nav-link" routerLink="/jardinage"  routerLinkActive="active">Jardinage</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">A propos</a>
+            <a class="nav-link" routerLink="/about"  routerLinkActive="active">A propos</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

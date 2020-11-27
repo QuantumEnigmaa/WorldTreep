@@ -11,11 +11,13 @@ import { Component, OnInit } from '@angular/core';
         </div>
         <div>
           <h3>Plan du site</h3>
+          <a routerLink="/accueil"  routerLinkActive="active">Accueil</a>
+          <br>
           <a>Continents</a>
           <br>
-          <a>Jardinage</a>
+          <a routerLink="/jardinage"  routerLinkActive="active">Jardinage</a>
           <br>
-          <a>A propos</a>
+          <a routerLink="/about"  routerLinkActive="active">A propos</a>
         </div>
         <div>
           <h3>Nous contacter</h3>

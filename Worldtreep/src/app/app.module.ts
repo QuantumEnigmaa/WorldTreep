@@ -11,6 +11,7 @@ import { FooterComponent } from './footer.component';
 import { NavbarComponent } from './navbar.component';
 import { JardinageComponent } from './jardinage.component';
 import { AccueilComponent } from './accueil.component';
+import { AProposComponent } from './apropos.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AccueilComponent } from './accueil.component';
     FooterComponent,
     NavbarComponent,
     JardinageComponent,
-    AccueilComponent
+    AccueilComponent,
+    AProposComponent
   ],
   imports: [
     BrowserModule,
