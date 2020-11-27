@@ -30,10 +30,10 @@ import { Component, OnInit } from '@angular/core';
             <img src="../assets/Facebook-logo.png" style="width: 70px; height: 50px;">
           </a>
           <a href="https://www.twitter.com">
-            <img src=".../assets/twitter-logo.png" style="width: 70px; height: 50px;">
+            <img src="../assets/twitter-logo.png" style="width: 50px; height: 50px;">
           </a>
           <a href="https://www.instagram.com">
-            <img src=".../assets/instagram-logo.png" style="width: 70px; height: 50px;">
+            <img src="../assets/instagram-logo.png" style="width: 65px; height: 50px; padding-left: 15px;">
           </a>
         </div>
       </div>
