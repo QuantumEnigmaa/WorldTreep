@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'wtp-navbar',
   template: `
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <wtp-sidenav></wtp-sidenav>
-      <a class="navbar-brand" href="#">WorldTreep</a>
+      <a class="navbar-brand" routerLink="/accueil"  routerLinkActive="active">WorldTreep</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Jardinage</a>
+            <a class="nav-link" routerLink="/jardinage"  routerLinkActive="active">Jardinage</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">A propos</a>
@@ -41,6 +41,8 @@ import { Component, OnInit } from '@angular/core';
         </form>
       </div>
     </nav>
+
+    <router-outlet></router-outlet>
   `,
   styles: [
   ]

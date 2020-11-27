@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'wtp-continent',
   template: `
-    <p>
+    <p style="margin-top: 50px;">
       continent works!
     </p>
   `,

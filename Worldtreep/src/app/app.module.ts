@@ -9,6 +9,8 @@ import { ContinentComponent } from './continent.component';
 import { SidenavComponent } from './sidenav.component';
 import { FooterComponent } from './footer.component';
 import { NavbarComponent } from './navbar.component';
+import { JardinageComponent } from './jardinage.component';
+import { AccueilComponent } from './accueil.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { NavbarComponent } from './navbar.component';
     ContinentComponent,
     SidenavComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    JardinageComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

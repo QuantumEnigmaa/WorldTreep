@@ -35,6 +35,9 @@ import { Component, OnInit } from '@angular/core';
           <a href="https://www.instagram.com">
             <img src="../assets/instagram-logo.png" style="width: 65px; height: 50px; padding-left: 15px;">
           </a>
+          <a href="https://www.linkedin.com">
+            <img src="../assets/linkedin-logo.png" style="width: 65px; height: 50px; padding-left: 15px;">
+          </a>
         </div>
       </div>
       <div style="width: 100%; background-color:#2d2d2d;">
