@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'wtp-jardinage',
   template: `
+  <wtp-navbar></wtp-navbar>
+
   <div style=" position: relative;">
     <div style="position: absolute">
       <img src="../assets/jardin.jpg" alt="photo de jardin" style="width: 100%; height: 100%;">
@@ -11,7 +13,9 @@ import { Component, OnInit } from '@angular/core';
       <h1>Page en cours de développement</h1>
     </div>
   </div>
+
   <wtp-footer></wtp-footer>
+
   `,
   styles: [
   ]

@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'wtp-navbar',
   template: `
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <wtp-sidenav></wtp-sidenav>
       <a class="navbar-brand" routerLink="/accueil"  routerLinkActive="active">WorldTreep</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

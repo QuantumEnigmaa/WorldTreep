@@ -5,6 +5,7 @@ import { AccueilComponent } from './accueil.component';
 import { AProposComponent } from './apropos.component';
 
 const routes: Routes = [
+  { path: '',   redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'jardinage', component: JardinageComponent },
   { path: 'accueil', component: AccueilComponent },
   { path: 'about', component: AProposComponent },

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <wtp-navbar></wtp-navbar>
 
     <wtp-continent></wtp-continent>
-    <mat-card class="top-card">
+    <mat-card class="top-card" id="test">
 
       <mat-card-content>
       <p>
@@ -16,7 +16,7 @@ import { Component, OnInit } from '@angular/core';
       </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>LIKE</button>
+        <button mat-button (click)="displayElement(false, 'test')">LIKE</button>
         <button mat-button>SHARE</button>
       </mat-card-actions>
     </mat-card>
@@ -63,7 +63,6 @@ import { Component, OnInit } from '@angular/core';
 
     <wtp-footer></wtp-footer>
 
-    <router-outlet></router-outlet>
   `,
   styles: [
   ]
@@ -73,6 +72,14 @@ export class AccueilComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  displayElement(a: boolean, b: string): void {
+    let targetElement;
+    targetElement = document.getElementById(b);
+    if (a === false) {
+      targetElement.hide();
+    }
   }
 
 }
