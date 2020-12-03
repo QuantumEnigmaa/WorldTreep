@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'wtp-footer',
   template: `
-    <footer>
+    <footer style="bottom: 0;">
       <div class="container">
         <div class="row" style="padding: 50px;">
           <div class="col-md-4">
@@ -50,6 +50,7 @@ import { Component, OnInit } from '@angular/core';
     </footer>
   `,
   styles: [
+    'img:hover { transition: transform 0.5s ease; transform: rotate(90deg); }'
   ]
 })
 export class FooterComponent implements OnInit {
