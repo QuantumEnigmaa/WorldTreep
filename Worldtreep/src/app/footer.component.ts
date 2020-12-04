@@ -14,7 +14,13 @@ import { Component, OnInit } from '@angular/core';
             <h3>Plan du site</h3>
             <a routerLink="/accueil"  routerLinkActive="active">Accueil</a>
             <br>
-            <a>Continents</a>
+            <a id="Cont" (click)="selectContinent(opened)">Continents</a>
+            <ul *ngIf="opened" style="margin-bottom: -15px;">
+              <li><a routerLink="/europe"  routerLinkActive="active">Europe</a></li>
+              <li><a routerLink="/asie"  routerLinkActive="active">Asie</a></li>
+              <li><a routerLink="/afrique"  routerLinkActive="active">Afrique</a></li>
+              <li><a routerLink="/amerique"  routerLinkActive="active">Amérique</a></li>
+            </ul>
             <br>
             <a routerLink="/jardinage"  routerLinkActive="active">Jardinage</a>
             <br>
@@ -50,14 +56,27 @@ import { Component, OnInit } from '@angular/core';
     </footer>
   `,
   styles: [
-    'img:hover { transition: transform 0.5s ease; transform: rotate(90deg); }'
+    'img:hover { transition: transform 0.5s ease; transform: rotate(90deg); }',
+
+    '#Cont:hover { text-decoration: underline; }',
+
+    '#Cont { color: #1E90FF; cursor: pointer; }'
   ]
 })
 export class FooterComponent implements OnInit {
+  opened = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectContinent(open: boolean): void {
+    if (open === false) {
+      this.opened = true;
+    } else {
+      this.opened = false;
+    }
   }
 
 }
