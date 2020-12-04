@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'wtp-continent',
+  selector: 'wtp-not-found',
   template: `
-    <p style="margin-top: 50px;">
-      continent works!
+    <p>
+      not-found works!
     </p>
   `,
   styles: [
   ]
 })
-export class ContinentComponent implements OnInit {
+export class NotFoundComponent implements OnInit {
 
   constructor() { }
 

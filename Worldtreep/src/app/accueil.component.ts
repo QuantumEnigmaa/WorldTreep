@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <wtp-navbar></wtp-navbar>
 
-    <wtp-continent></wtp-continent>
     <mat-card class="top-card" id="test">
 
       <mat-card-content>

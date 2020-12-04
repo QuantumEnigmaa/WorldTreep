@@ -16,10 +16,10 @@ import { Component, OnInit } from '@angular/core';
               Continents
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Europe</a>
-              <a class="dropdown-item" href="#">Asie</a>
-              <a class="dropdown-item" href="#">Afrique</a>
-              <a class="dropdown-item" href="#">Amérique</a>
+              <a class="dropdown-item" routerLink="/europe"  routerLinkActive="active">Europe</a>
+              <a class="dropdown-item" routerLink="/asie"  routerLinkActive="active">Asie</a>
+              <a class="dropdown-item" routerLink="/afrique"  routerLinkActive="active">Afrique</a>
+              <a class="dropdown-item" routerLink="/amerique"  routerLinkActive="active">Amérique</a>
             </div>
           </li>
           <li class="nav-item active">
