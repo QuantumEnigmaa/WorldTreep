@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar.component';
 import { JardinageComponent } from './jardinage.component';
 import { AccueilComponent } from './accueil.component';
 import { AProposComponent } from './apropos.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,13 +25,15 @@ import { AProposComponent } from './apropos.component';
     JardinageComponent,
     AccueilComponent,
     AProposComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

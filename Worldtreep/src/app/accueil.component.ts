@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { plant } from './plant';
+import { TrefleService } from './trefle.service';
 
 @Component({
   selector: 'wtp-accueil',
@@ -61,6 +65,14 @@ import { Component, OnInit } from '@angular/core';
       </mat-card-content>
     </mat-card>
 
+    <div>
+      <div *ngIf="myself$ | async as myself">
+        <p>Author: <span>{{ myself[0].author }}</span></p>
+        <p>Link genus: <span>{{ myself[0].links.genus}}</span></p>
+        <p>genus: <span>{{ myself[0].genus}}</span></p>
+      </div>
+    </div>
+
     <wtp-footer></wtp-footer>
 
   `,
@@ -69,9 +81,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  myself$: Observable<plant[]>;
+
+  constructor( private Trefleservice: TrefleService) { }
 
   ngOnInit(): void {
+    this.myself$ = this.Trefleservice.getPlantdata();
   }
 
   displayElement(a: boolean, b: string): void {
