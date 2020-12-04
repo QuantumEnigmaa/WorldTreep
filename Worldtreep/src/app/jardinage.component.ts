@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   <wtp-navbar></wtp-navbar>
 
   <div style=" position: relative;">
-    <img src="../assets/jardin2.jpg" alt="photo de jardin" style="width: 100%; height: 100%;">
-    <div style="position: absolute; top: 50%; bottom: 50%; transform: translate(-50%, -50%);">
-      <h1>Page en cours de développement</h1>
+    <img src="../assets/jardin.jpg" alt="photo de jardin" style="width: 100%; height: 100%;">
+    <div style="position: absolute; top: 50%; bottom: 50%;">
+      <h1 style="color: white;">Page en cours de développement</h1>
     </div>
   </div>
 
