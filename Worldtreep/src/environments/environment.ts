@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://trefle.io/api/v1/',
+  apiToken: 'NlJoDGmVRg054293KjFh_q5AGyvIPiVFoBWMk-evd10'
 };
 
 /*
