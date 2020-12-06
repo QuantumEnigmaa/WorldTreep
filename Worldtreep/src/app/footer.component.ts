@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
         <div class="row" style="padding: 50px;">
           <div class="col-md-4">
             <h3>Nos Partenaires</h3>
-            <a>Insérer logo</a>
+            <img src="../assets/ISEN-logo.png" alt="logo de l'ISEN méditerranée" style="width: 120px; height: 70px; margin-right: 20px;">
+            <img src="../assets/Ecosia-logo.png" alt="logo de l'ISEN méditerranée" style="width: 110px; height: 90px;">
           </div>
           <div class="col-md-4">
             <h3>Plan du site</h3>
@@ -26,7 +27,7 @@ import { Component, OnInit } from '@angular/core';
             <br>
             <a routerLink="/about"  routerLinkActive="active">A propos</a>
           </div>
-          <div class="col-md-4">
+          <div id="contact" class="col-md-4">
             <h3>Nous contacter</h3>
             <a>Vous pouvez contacter les créateurs du site grâce à leurs e-mail :</a>
             <br>
@@ -56,7 +57,7 @@ import { Component, OnInit } from '@angular/core';
     </footer>
   `,
   styles: [
-    'img:hover { transition: transform 0.5s ease; transform: rotate(90deg); }',
+    '#contact img:hover { transition: transform 0.5s ease; transform: rotate(90deg); }',
 
     '#Cont:hover { text-decoration: underline; }',
 

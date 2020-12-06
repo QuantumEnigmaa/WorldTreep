@@ -26,7 +26,7 @@ export class plant {
     // this.image = itemJson['strDrinkThumb'];
     // this.listIngredients = itemJson['strIngredient1','strIngredient2','strIngredient3'];
 
-    this.author =  itemJson['author'];
+    this.data.author =  itemJson['author'];
     this.bibliography = itemJson['bibliography'];
     this.common_name =  itemJson['common_name'];
     this.family = itemJson['family'];
@@ -46,10 +46,9 @@ export class plant {
     this.year = itemJson['year'];
   }
 
+  // "links":{
+  // "self":"/api/v1/species/quercus-rotundifolia",
+  // "plant":"/api/v1/plants/quercus-rotundifolia",
+  // "genus":"/api/v1/genus/quercus"}}
+
 }
-
-
-// "links":{
- // "self":"/api/v1/species/quercus-rotundifolia",
- // "plant":"/api/v1/plants/quercus-rotundifolia",
- // "genus":"/api/v1/genus/quercus"}}
