@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 
   <div style=" position: relative;">
     <img src="../assets/jardin.jpg" alt="photo de jardin" style="width: 100%; height: 100%;">
-    <div style="position: absolute; top: 50%; bottom: 50%;">
-      <h1 style="color: white;"><a href="#OUI">Page en cours de développement</a></h1>
+    <div style="position: absolute; top: 50%; bottom: 50%; margin-left: 20%;">
+      <h1 style="font-size: 60px;"><a href="#OUI" style="color: white; text-decoration: none;">Page en cours de développement</a></h1>
     </div>
   </div>
 

@@ -26,7 +26,7 @@ export class plant {
     // this.image = itemJson['strDrinkThumb'];
     // this.listIngredients = itemJson['strIngredient1','strIngredient2','strIngredient3'];
 
-    this.data.author =  itemJson['author'];
+    this.author =  itemJson['author'];
     this.bibliography = itemJson['bibliography'];
     this.common_name =  itemJson['common_name'];
     this.family = itemJson['family'];
