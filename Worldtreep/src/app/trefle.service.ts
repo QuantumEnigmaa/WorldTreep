@@ -19,7 +19,7 @@ export class TrefleService {
 
   tallestTrees: Array<plant> = []; // tableau qui récupèrera la liste des arbres les plus grands pour un continent donné
 
-  getPlantdata(): Observable<plant[]>{
+  /*getPlantdata(): Observable<plant[]>{
 
     return this.http.get('/api/v1/plants?token=7CxQJeGq4m63Y75bdhOkS4kiUDq1ukMveitZjzU2bnc').pipe(
       map( obj => obj['data'].map(itemJson => new plant(itemJson))));
@@ -34,11 +34,12 @@ export class TrefleService {
     }
   }
 
-  getTallestTrees(continent: string): Array<plant> {
+  getTallestTrees(continent: string): Observable<plant[]> {
     if (continent === 'europe') {
       // Définition de la requête complète
-      const requestUrl = this.apiUrl + this.listPlant + '?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&' + this.token;
-      return this.http.get(requestUrl);
+      const requestUrl = this.apiUrl + this.listPlant +
+      '?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&' + this.token;
+      return this.http.get<plant[]>(requestUrl);
     }
     else if (continent === 'asie') {
 
@@ -51,7 +52,7 @@ export class TrefleService {
     } else {
       console.log('Erreur, continent non reconnu');
     }
-  }
+  }*/
 }
 
 
