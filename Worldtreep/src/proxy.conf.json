@@ -3,9 +3,6 @@
       "target": "http://localhost:4200",
       "secure": false,
       "logLevel": "debug",
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^/api": "https://trefle.io/api"
-      }
+      "changeOrigin": true
   }
 }

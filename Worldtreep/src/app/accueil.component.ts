@@ -20,7 +20,7 @@ import { TrefleService } from './trefle.service';
       </mat-card-content>
       <mat-card-actions>
         <button mat-button (click)="displayElement(false, 'test')">LIKE</button>
-        <button mat-button>SHARE</button>
+        <button mat-button (click)="getAllElement()">SHARE</button>
       </mat-card-actions>
     </mat-card>
 
@@ -63,15 +63,6 @@ import { TrefleService } from './trefle.service';
         <button mat-button>SHARE</button>
       </mat-card-content>
     </mat-card>
-
-    <div>
-      <div *ngIf="myself$ | async as myself">
-        <p>Author: <span>{{ myself[0].author }}</span></p>
-        <p>Link genus: <span>{{ myself[0].links.genus}}</span></p>
-        <p>genus: <span>{{ myself[0].genus}}</span></p>
-      </div>
-    </div>
-
     <wtp-footer></wtp-footer>
 
   `,
@@ -80,12 +71,18 @@ import { TrefleService } from './trefle.service';
 })
 export class AccueilComponent implements OnInit {
 
-  myself$: Observable<plant[]>;
-
   constructor( private Trefleservice: TrefleService) { }
 
-  ngOnInit(): void {
-    this.myself$ = this.Trefleservice.getPlantdata();
+  ngOnInit(): void { }
+
+  getAllElement(): void {
+
+    this.Trefleservice.getPlantdata().subscribe(plants => {
+      for (let i = 0; i < plants.length; i++){
+        console.log(plants[i]);
+        console.log('nb' + i);
+      }
+    });
   }
 
   displayElement(a: boolean, b: string): void {
