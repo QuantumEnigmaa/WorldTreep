@@ -46,10 +46,9 @@ export class plant {
     this.year = itemJson['year'];
   }
 
+  // "links":{
+  // "self":"/api/v1/species/quercus-rotundifolia",
+  // "plant":"/api/v1/plants/quercus-rotundifolia",
+  // "genus":"/api/v1/genus/quercus"}}
+
 }
-
-
-// "links":{
- // "self":"/api/v1/species/quercus-rotundifolia",
- // "plant":"/api/v1/plants/quercus-rotundifolia",
- // "genus":"/api/v1/genus/quercus"}}
