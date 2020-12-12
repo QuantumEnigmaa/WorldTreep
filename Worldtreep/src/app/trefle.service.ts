@@ -17,9 +17,9 @@ export class TrefleService {
   listPlant = environment.apiUrl + 'plants/'; // Début d'url pour accéder aux plantes
   listSpecies = environment.apiUrl + 'species/'; // Début d'url pour accéder aux espèces
 
-  tallestTrees: Array<plant> = []; // tableau qui récupèrera la liste des arbres les plus grands pour un continent donné
+  tallestTrees: Array<plant>; // tableau qui récupèrera la liste des arbres les plus grands pour un continent donné
 
-  /*getPlantdata(): Observable<plant[]>{
+  getPlantdata(): Observable<plant[]>{
 
     return this.http.get('/api/v1/plants?token=7CxQJeGq4m63Y75bdhOkS4kiUDq1ukMveitZjzU2bnc').pipe(
       map( obj => obj['data'].map(itemJson => new plant(itemJson))));
@@ -52,7 +52,7 @@ export class TrefleService {
     } else {
       console.log('Erreur, continent non reconnu');
     }
-  }*/
+  }
 }
 
 
