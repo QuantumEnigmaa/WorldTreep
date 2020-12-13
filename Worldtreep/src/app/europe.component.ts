@@ -97,6 +97,7 @@ export class EuropeComponent implements OnInit {
   constructor(private trefleService: TrefleService) { }
 
   ngOnInit(): void {
+    this.tallestTrees$ = this.trefleService.getTallestTrees(this.continent);
   }
 
 }

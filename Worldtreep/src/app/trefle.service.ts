@@ -34,6 +34,7 @@ export class TrefleService {
     }
   }
 
+  // Function that gives the tallest trees of a continent
   getTallestTrees(continent: string): Observable<plant[]> {
     if (continent === 'europe') {
       // Définition de la requête complète
@@ -42,13 +43,22 @@ export class TrefleService {
       return this.http.get<plant[]>(requestUrl);
     }
     else if (continent === 'asie') {
-
+      // Définition de la requête complète
+      const requestUrl = this.apiUrl + this.listPlant +
+      '?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&' + this.token;
+      return this.http.get<plant[]>(requestUrl);
     }
     else if (continent === 'afrique') {
-
+      // Définition de la requête complète
+      const requestUrl = this.apiUrl + this.listPlant +
+      '?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&' + this.token;
+      return this.http.get<plant[]>(requestUrl);
     }
     else if (continent === 'america') {
-
+      // Définition de la requête complète
+      const requestUrl = this.apiUrl + this.listPlant +
+      '?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&' + this.token;
+      return this.http.get<plant[]>(requestUrl);
     } else {
       console.log('Erreur, continent non reconnu');
     }
