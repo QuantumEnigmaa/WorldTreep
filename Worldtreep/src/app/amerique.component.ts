@@ -91,10 +91,12 @@ export class AmeriqueComponent implements OnInit {
   continent = 'america';
 
   constructor(private trefleService: TrefleService) { }
+ngOnInit(){
 
+}/*
   ngOnInit(): plant[] {
     return this.trefleService.getTallestTrees(this.continent)
       .subscribe(data => this.tallestTrees = data);
   }
-
+*/
 }

@@ -1,6 +1,6 @@
 {
   "/api/*": {
-      "target": "http://localhost:4200",
+      "target": "https://trefle.io/",
       "secure": false,
       "logLevel": "debug",
       "changeOrigin": true

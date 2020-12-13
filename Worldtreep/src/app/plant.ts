@@ -7,11 +7,6 @@ export class plant {
   genus: string;
   genus_id: number;
   id: number;
-  links: {
-    genus: string;
-    plant: string;
-    self: string;
-  };
   image_url: number;
   rank: string;
   scientific_name: string;
@@ -34,9 +29,6 @@ export class plant {
     this.genus = itemJson['genus'];
     this.genus_id = itemJson['genus_id'];
     this.id = itemJson['id'];
-    this.links.genus = itemJson['genus']
-    this.links.plant = itemJson['plant'];
-    this.links.self = itemJson['self'];
     this.image_url = itemJson['image_url'];
     this.rank = itemJson['rank'];
     this.scientific_name = itemJson['scientific_name'];
@@ -45,10 +37,4 @@ export class plant {
     this.synonyms = itemJson['synonyms'];
     this.year = itemJson['year'];
   }
-
-  // "links":{
-  // "self":"/api/v1/species/quercus-rotundifolia",
-  // "plant":"/api/v1/plants/quercus-rotundifolia",
-  // "genus":"/api/v1/genus/quercus"}}
-
 }
