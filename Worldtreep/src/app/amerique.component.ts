@@ -49,7 +49,7 @@ import { TrefleService } from './trefle.service';
 
           <mat-card-content>
             <div *ngFor="let plant of tallestTrees$">
-              <p>{{ plant.common_name }}</p>
+              <!--p>{{ plant.common_name }}</p!-->
             </div>
           </mat-card-content>
           <mat-card-actions>
@@ -146,7 +146,7 @@ export class AmeriqueComponent implements OnInit {
   constructor(private trefleService: TrefleService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.tallestTrees$ = this.trefleService.getTallestTrees(this.continent);
+    // this.tallestTrees$ = this.trefleService.getTallestTrees(this.continent);
   }
 
   first(): void{

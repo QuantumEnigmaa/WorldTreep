@@ -24,7 +24,7 @@ export class TrefleService {
     return this.http.get('/api/v1/plants?token=7CxQJeGq4m63Y75bdhOkS4kiUDq1ukMveitZjzU2bnc').pipe(
       map( obj => obj['data'].map(itemJson => new plant(itemJson))));
   }
-
+/*
   getName(searchedPlant: plant): string { // Permet de récupérer le nom commun d'une plante
     if (searchedPlant.common_name !== null) {
       return searchedPlant.common_name;
@@ -62,7 +62,7 @@ export class TrefleService {
     } else {
       console.log('Erreur, continent non reconnu');
     }
-  }
+  }*/
 }
 
 
