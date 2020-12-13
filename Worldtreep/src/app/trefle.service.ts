@@ -17,7 +17,7 @@ export class TrefleService {
   listPlant = environment.apiUrl + 'plants/'; // Début d'url pour accéder aux plantes
   listSpecies = environment.apiUrl + 'species/'; // Début d'url pour accéder aux espèces
 
-  tallestTrees: Array<plant> = []; // tableau qui récupèrera la liste des arbres les plus grands pour un continent donné
+  tallestTrees: Array<plant>; // tableau qui récupèrera la liste des arbres les plus grands pour un continent donné
 
   getPlantdata(): Observable<plant[]>{
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { plant } from './plant';
 import { TrefleService } from './trefle.service';
 
@@ -38,11 +39,9 @@ import { TrefleService } from './trefle.service';
         <mat-card class="top-card">
 
           <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
+            <div *ngFor="let plant of tallestTrees$">
+              <p>{{ plant.common_name }}</p>
+            </div>
           </mat-card-content>
           <mat-card-actions>
             <button mat-button>LIKE</button>
@@ -86,17 +85,19 @@ import { TrefleService } from './trefle.service';
   ]
 })
 export class AmeriqueComponent implements OnInit {
-  tallestTrees: plant[];
   id: Array<string> = ['tallest'];
+  tallestTrees$: Observable<plant[]>;
   continent = 'america';
 
   constructor(private trefleService: TrefleService) { }
-ngOnInit(){
 
-}/*
-  ngOnInit(): plant[] {
+  ngOnInit(): void {
+    /*this.tallestTrees$ = this.trefleService.getTallestTrees(this.continent);
     return this.trefleService.getTallestTrees(this.continent)
-      .subscribe(data => this.tallestTrees = data);
+      .subscribe({
+        data: plant[] => { this.tallestTrees = data; },
+        error: error => console.log(error)
+      });*/
   }
-*/
+
 }

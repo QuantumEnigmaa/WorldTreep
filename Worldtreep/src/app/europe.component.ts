@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TrefleService } from './trefle.service';
+import { Observable } from 'rxjs';
+import { plant } from './plant';
 
 @Component({
   selector: 'wtp-europe',
@@ -88,8 +91,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EuropeComponent implements OnInit {
   id: Array<string> = ['toxic'];
+  tallestTrees$: Observable<plant[]>;
+  continent = 'europe';
 
-  constructor() { }
+  constructor(private trefleService: TrefleService) { }
 
   ngOnInit(): void {
   }
