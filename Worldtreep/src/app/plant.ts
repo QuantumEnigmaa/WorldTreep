@@ -7,7 +7,7 @@ export class plant {
   genus: string;
   genus_id: number;
   id: number;
-  image_url: number;
+  image_url: string;
   rank: string;
   scientific_name: string;
   slug: string;

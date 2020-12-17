@@ -48,8 +48,8 @@ import { TrefleService } from './trefle.service';
         <mat-card class="top-card">
 
           <mat-card-content>
-            <div *ngFor="let plant of tallestTrees$">
-              <!--p>{{ plant.common_name }}</p!-->
+            <div *ngFor="let plant of listTallest">
+              <p>{{ plant.common_name }}</p>
             </div>
           </mat-card-content>
           <mat-card-actions>
@@ -94,8 +94,8 @@ import { TrefleService } from './trefle.service';
         <mat-card class="top-card">
 
           <mat-card-content>
-            <div *ngFor="let plant of tallestTrees$">
-              <p>{{ plant.common_name }}</p>
+            <div *ngFor="let plant of listTallest">
+              <!--p>{{ plant.common_name }}</p!-->
             </div>
           </mat-card-content>
           <mat-card-actions>
@@ -140,13 +140,21 @@ import { TrefleService } from './trefle.service';
   ]
 })
 export class AmeriqueComponent implements OnInit {
-  tallestTrees$: Observable<plant[]>;
+  listTallest: plant[];
   continent = 'america';
 
   constructor(private trefleService: TrefleService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    // this.tallestTrees$ = this.trefleService.getTallestTrees(this.continent);
+    this.listTallest = this.fillList();
+  }
+
+  fillList(): plant[] {
+    const list: plant[] = [];
+    this.trefleService.getTallestTrees(this.continent).subscribe((data: plant[]) => {
+      Object.assign(list, data);
+    });
+    return list;
   }
 
   first(): void{

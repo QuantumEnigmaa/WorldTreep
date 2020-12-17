@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://trefle.io/api/v1/',
   apiToken: 'NlJoDGmVRg054293KjFh_q5AGyvIPiVFoBWMk-evd10'
 };
 
