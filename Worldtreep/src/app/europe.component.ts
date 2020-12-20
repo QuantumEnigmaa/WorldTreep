@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { TrefleService } from './trefle.service';
 import { Observable } from 'rxjs';
 import { plant } from './plant';
@@ -10,10 +10,9 @@ import { plant } from './plant';
 
     <div style=" position: relative;">
       <img src="../assets/Europe-paysage.jpg" alt="photo de paysage européen commun" style="width: 100%; height: 100%;">
-      <div *ngFor="let content of id" style="position: absolute; top: 10%; bottom: 90%;">
-        <h1 style="margin-left: 70%;">
-          <a [routerLink]='"."' [fragment]="content" class="learn-btn animated fadeInUp" style="color: white; font-size: 60px; text-decoration: none;">
-          Page en cours de développement</a>
+      <div style="position: absolute; top: 10%; bottom: 90%;">
+        <h1 style="margin-left: 70%; color: white; font-size: 60px;">
+          Le Continent européen
         </h1>
         <div style="position: absolute; display: flex; flex-direction: row; justify-content: space-around">
           <p style="background-color: white; border: thin solid black justify-content: justify; margin-left: 30%; margin-right: 20px;">
@@ -31,25 +30,25 @@ import { plant } from './plant';
             <p>Plante la plus abondante : </p>
           </aside>
         </div>
+        <a (click)="first()"  id="discover" style="position: absolute; color: white;cursor: pointer; font-size: x-large;
+        margin-left: 30%; border: solid white; padding: 5px; margin-top: 80%;">
+          Découvrir les plantes européennes
+          <img src="../assets/arrow-down.png" alt="image d'une flèche vers le bas" style="height: 30px; width: 45px;">
+        </a>
       </div>
     </div>
 
-    <div *ngFor="let content of id" [attr.id]='content' style="background-image: url(../assets/Europe-amanite.jpg)">
-      <h1 id="toxic" style="text-align: center;">Les plantes les plus toxiques</h1>
+    <div style="background-image: url(../assets/Europe-amanite.jpg)">
+      <p id="tallest" style="margin-top: -12px;"></p>
+      <h1 style="text-align: center;">Les plantes les plus toxiques d'Europe</h1>
       <div style="display: flex; flex-direction: row; justify-content: space-between; padding: 20px;">
         <mat-card class="top-card">
 
           <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
+          <div *ngFor="let plant of listTallest">
+              <p>{{ plant.common_name }}</p>
+            </div>
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
         </mat-card>
         <mat-card class="top-card">
 
@@ -60,10 +59,6 @@ import { plant } from './plant';
               bred for hunting.
             </p>
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
         </mat-card>
         <mat-card class="top-card">
 
@@ -74,10 +69,6 @@ import { plant } from './plant';
               bred for hunting.
             </p>
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
         </mat-card>
       </div>
     </div>
@@ -85,19 +76,42 @@ import { plant } from './plant';
     <wtp-footer></wtp-footer>
   `,
   styles: [
-    'a { transition-timing-function: ease-in-out; transition-duration: 300ms; }',
-    '@keyframes fadeIn { 0% {opacity: 0; transform: translateY(20px);} 100% {opacity: 1; transform: translateY(0);} }'
   ]
 })
 export class EuropeComponent implements OnInit {
-  id: Array<string> = ['toxic'];
-  tallestTrees$: Observable<plant[]>;
+  listTallest: plant[];
   continent = 'europe';
 
-  constructor(private trefleService: TrefleService) { }
+  constructor(private trefleService: TrefleService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    // this.tallestTrees$ = this.trefleService.getTallestTrees(this.continent);
+    this.listTallest = this.fillList();
+  }
+
+  fillList(): plant[] {
+    const list: plant[] = [];
+    this.trefleService.getTallestTrees(this.continent).subscribe((data: plant[]) => {
+      Object.assign(list, data);
+    });
+    return list;
+  }
+
+  first(): void{
+          try {
+        const errorField = this.renderer.selectRootElement('#tallest');
+        errorField.scrollIntoView();
+      } catch (err) {
+
+      }
+  }
+
+  second(): void{
+          try {
+        const errorField = this.renderer.selectRootElement('#toxic');
+        errorField.scrollIntoView();
+      } catch (err) {
+
+      }
   }
 
 }

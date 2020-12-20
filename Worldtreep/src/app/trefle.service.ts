@@ -48,7 +48,7 @@ export class TrefleService {
       '?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&' + this.token;
       return this.http.get<plant[]>(requestUrl);
     }
-    else if (continent === 'afrique') {
+    else if (continent === 'afri') {
       // Définition de la requête complète
       const requestUrl = this.apiUrl + this.listPlant +
       '?filter_not%5Bmaximum_height_cm%5D=null&filter%5Bligneous_type%5D=tree&order%5Bmaximum_height_cm%5D=desc&' + this.token;
