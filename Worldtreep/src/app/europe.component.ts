@@ -15,7 +15,8 @@ import { plant } from './plant';
           Le Continent européen
         </h1>
         <div style="position: absolute; display: flex; flex-direction: row; justify-content: space-around">
-          <p style="background-color: white; border: thin solid black justify-content: justify; margin-left: 30%; margin-right: 20px;">
+          <p style="background-color: white; border: thin solid black justify-content: justify; margin-left: 30%; margin-right: 20px;
+          padding: 2%;">
             L'Europe, terre des forêts celtes, des fjord vikings et des montagnes helvètes. La nature y est imprégnée d'une énergie
             ancienne, puissante. Que ce soit les vastes plaines du centre de la France, les profondes forêts polonaises, les terres
             arides d'Andalousie ou encore les hautes montagnes alpines, une grande variété de paysage s'offre à quicquonque y prette
@@ -23,7 +24,8 @@ import { plant } from './plant';
             <br><br>
             Vous pourrez donc à la fois observer conifères, chênes, pins et une multitude de magnifiques fleurs où que vous alliez !
           </p>
-          <aside style="background-color: lightgrey; border: thin solid black margin-left: 20px;">
+          <aside style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2%;
+          background-color: lightgrey; border: thin solid black margin-left: 20px;">
             <h2>Statistiques du continent</h2>
             <p>Types de climat : tempéré</p>
             <p>Espèce la plus abondante : </p>
