@@ -14,12 +14,11 @@ import { TrefleService } from './trefle.service';
       <!--div *ngFor="let content of id" style="position: absolute; top: 10%; bottom: 90%;"!-->
       <div style="padding: 2%;">
         <!--h1 style="margin-left: 90%;"!-->
-        <h1 style="margin-left: 30%;">
-          <a (click)="first()" style="color: white; font-size: 60px; cursor: pointer;">
-          Le continent américain</a>
+        <h1 style="margin-left: 30%; color: white; font-size: 60px;">
+          Le continent américain
         </h1>
         <!--div style="position: absolute; display: flex; flex-direction: row; justify-content: space-around; margin-top: 2%;"!-->
-        <div style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 2%;">
+        <div style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 2%; margin-bottom: 2%">
           <p style="background-color: white; border: thin solid black; text-align: justify;
           margin-left: 30%; margin-right: 20px; padding: 2%; font-size: xx-large;">
             Bienvenue en Amérique ! Le continent américain pourrait en réalité être découpé en plusieurs sous-continents :
@@ -36,13 +35,18 @@ import { TrefleService } from './trefle.service';
             <p>Plante la plus abondante : </p>
           </aside>
         </div>
+        <a (click)="first()"  id="discover" style="color: white;cursor: pointer; font-size: x-large; margin-left: 30%;
+        border: solid white; padding: 5px">
+          Découvrir les plantes américaines
+          <img src="../assets/arrow-down.png" alt="image d'une flèche vers le bas" style="height: 30px; width: 45px;">
+        </a>
       </div>
     </div>
 
     <div style="background-image: url(../assets/America-sequoia.jpg);">
-      <p id="tallest"></p>
+      <p id="tallest" style="margin-top: -12px;"></p>
       <h1 style="text-align: center;">
-        <a (click)="second()"style="color: black; cursor: pointer;">Les plus grands arbres d'Amérique</a>
+        <a (click)="second()" style="color: black; cursor: pointer;">Les plus grands arbres d'Amérique</a>
       </h1>
       <div style="display: flex; flex-direction: row; justify-content: space-around; padding: 20px;">
         <mat-card class="top-card">
@@ -52,10 +56,14 @@ import { TrefleService } from './trefle.service';
               <p>{{ plant.common_name }}</p>
             </div>
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
+        </mat-card>
+        <mat-card class="top-card">
+
+          <mat-card-content>
+            <div *ngFor="let plant of listTallest">
+              <img src="plant.image_url">
+            </div>
+          </mat-card-content>
         </mat-card>
         <mat-card class="top-card">
 
@@ -66,29 +74,11 @@ import { TrefleService } from './trefle.service';
               bred for hunting.
             </p>
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-        <mat-card class="top-card">
-
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
         </mat-card>
       </div>
     </div>
     <div style="background-image: url(../assets/America-mushroom.jpg)">
-      <p id="toxic"></p>
+      <p id="toxic" style="margin-top: -12px;"></p>
       <h1 id="toxic" style="text-align: center; color: white;">Les plantes les plus toxiques d'Amérique</h1>
       <div style="display: flex; flex-direction: row; justify-content: space-around; padding: 20px;">
         <mat-card class="top-card">
@@ -137,6 +127,7 @@ import { TrefleService } from './trefle.service';
     <wtp-footer></wtp-footer>
   `,
   styles: [
+    '#discover:hover { color: blue; }'
   ]
 })
 export class AmeriqueComponent implements OnInit {
