@@ -40,38 +40,89 @@ import { plant } from './plant';
       </div>
     </div>
 
-    <div style="background-image: url(../assets/Europe-amanite.jpg)">
+    <div style="background-image: url(../assets/Europe-tallest.jpg)">
       <p id="tallest" style="margin-top: -12px;"></p>
-      <h1 style="text-align: center;">Les plantes les plus toxiques d'Europe</h1>
-      <div style="display: flex; flex-direction: row; justify-content: space-between; padding: 20px;">
-        <mat-card class="top-card">
+      <h1 style="text-align: center; color: white">Les plus grands arbres d'Europe</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm" *ngFor="let plant of listTallest; let i= index">
+            <div [ngSwitch]="i">
+              <div *ngSwitchDefault ></div>
+              <mat-card class="top-card" *ngSwitchCase="0" style="height: 500px; margin-bottom: 10%">
 
-          <mat-card-content>
-          <div *ngFor="let plant of listTallest">
-              <p>{{ plant.common_name }}</p>
+                <mat-card-content>
+                  <h1 style="text-align: center">{{ plant.common_name }}</h1>
+                  <img src="{{ plant.image_url }}" style="width: 200px;">
+                  <p style="margin-top: 4%;">Nom scientifique : {{ plant.scientific_name }}</p>
+                  <p>Année de découverte : {{ plant.year }}</p>
+                </mat-card-content>
+              </mat-card>
+              <mat-card class="top-card" *ngSwitchCase="8" style="height: 500px; margin-bottom: 10%">
+
+                <mat-card-content>
+                  <h1 style="text-align: center">{{ plant.common_name }}</h1>
+                  <img src="{{ plant.image_url }}" style="width: 200px;">
+                  <p style="margin-top: 4%;">Nom scientifique : {{ plant.scientific_name }}</p>
+                  <p>Année de découverte : {{ plant.year }}</p>
+                </mat-card-content>
+              </mat-card>
+              <mat-card class="top-card" *ngSwitchCase="12" style="height: 500px; margin-bottom: 10%">
+
+                <mat-card-content>
+                  <h1 style="text-align: center">{{ plant.common_name }}</h1>
+                  <img src="{{ plant.image_url }}" style="width: 200px;">
+                  <p style="margin-top: 4%;">Nom scientifique : {{ plant.scientific_name }}</p>
+                  <p>Année de découverte : {{ plant.year }}</p>
+                </mat-card-content>
+              </mat-card>
             </div>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="top-card">
+          </div>
+        </div>
+      </div>
+      <a (click)="second()"  id="discover" style="color: white;cursor: pointer; font-size: x-large; margin-left: 45%;
+        border: solid white; padding: 5px;">
+          Suite
+          <img src="../assets/arrow-down.png" alt="image d'une flèche vers le bas" style="height: 30px; width: 45px;">
+      </a>
+    </div>
+    <div style="background-image: url(../assets/Europe-edible.jpg)">
+      <p id="toxic" style="margin-top: -12px;"></p>
+      <h1 id="toxic" style="text-align: center; color: white;">Les plantes comestibles d'Europe</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm" *ngFor="let plant of listEdible; let i= index">
+            <div [ngSwitch]="i">
+              <div *ngSwitchDefault ></div>
+              <mat-card class="top-card" *ngSwitchCase="0" style="height: 500px; margin-bottom: 10%">
 
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="top-card">
+                <mat-card-content>
+                  <h1 style="text-align: center">{{ plant.common_name }}</h1>
+                  <img src="{{ plant.image_url }}" style="width: 200px;">
+                  <p style="margin-top: 4%;">Nom scientifique : {{ plant.scientific_name }}</p>
+                  <p>Année de découverte : {{ plant.year }}</p>
+                </mat-card-content>
+              </mat-card>
+              <mat-card class="top-card" *ngSwitchCase="3" style="height: 500px; margin-bottom: 10%">
 
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
-          </mat-card-content>
-        </mat-card>
+                <mat-card-content>
+                  <h1 style="text-align: center">{{ plant.common_name }}</h1>
+                  <img src="{{ plant.image_url }}" style="width: 200px;">
+                  <p style="margin-top: 4%;">Nom scientifique : {{ plant.scientific_name }}</p>
+                  <p>Année de découverte : {{ plant.year }}</p>
+                </mat-card-content>
+              </mat-card>
+              <mat-card class="top-card" *ngSwitchCase="12" style="height: 500px; margin-bottom: 10%">
+
+                <mat-card-content>
+                  <h1 style="text-align: center">{{ plant.common_name }}</h1>
+                  <img src="{{ plant.image_url }}" style="width: 200px;">
+                  <p style="margin-top: 4%;">Nom scientifique : {{ plant.scientific_name }}</p>
+                  <p>Année de découverte : {{ plant.year }}</p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -82,17 +133,27 @@ import { plant } from './plant';
 })
 export class EuropeComponent implements OnInit {
   listTallest: plant[];
+  listEdible: plant[];
   continent = 'europe';
 
   constructor(private trefleService: TrefleService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.listTallest = this.fillList();
+    this.listTallest = this.fillListTallest();
+    this.listEdible = this.fillListEdible();
   }
 
-  fillList(): plant[] {
+  fillListTallest(): plant[] {
     const list: plant[] = [];
     this.trefleService.getTallestTrees(this.continent).subscribe((data: plant[]) => {
+      Object.assign(list, data);
+    });
+    return list;
+  }
+
+  fillListEdible(): plant[] {
+    const list: plant[] = [];
+    this.trefleService.getEdiblePlants(this.continent).subscribe((data: plant[]) => {
       Object.assign(list, data);
     });
     return list;
