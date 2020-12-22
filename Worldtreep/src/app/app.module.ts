@@ -17,6 +17,7 @@ import { AmeriqueComponent } from './amerique.component';
 import { NotFoundComponent } from './not-found.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { NotFoundComponent } from './not-found.component';
     AppRoutingModule,
     MatCardModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
