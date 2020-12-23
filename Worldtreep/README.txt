@@ -1,4 +1,4 @@
-GUIDE D'UTILISATION :
+## GUIDE D'UTILISATION :
 Pour lancer le site en local, veuillez utiliser un terminal powershell ou nodeJS. Une fois que vous serez dans le répertoire
 contenant les node_modules ainsi que le répertoire src, lancez la commande "ng serve".
 
@@ -22,7 +22,8 @@ En cliquant sur ce bouton, la page sera automatiquement descendue à l'emplaceme
 Dans ce thème vous serons présenté 3 des plus grands arbres du continent, une photo d'eux ainsi que leur année de découverte et
 leur nom scientifique. Un bouton "suite" vous emmènera au prochain thème en descendant une nouvelle fois la page.
 
-Le deuxième thème est "les plantes comestibles" et présente de la manière que précédemment 3 plantes comestibles du continent.
+Le deuxième  abordé sur la page concerne "les plantes comestibles" et présente de la manière que précédemment 3 plantes
+comestibles du continent.
 
 N'essayez pas d'utiliser la barre de recherche, nous n'avons pas eu le temps de nous pencher dessus. Son existence sur la
 version finale du site n'est là que pour donner un aperçu de notre vision du site : c'est un axe de développement de celui-ci.
@@ -31,7 +32,7 @@ Une section "Nous contacter" est disponible dans le pied-de-page, permettant aux
 cliquant sur un de nos prénoms ou via des réseaux sociaux.
 
 
-INFORMATIONS DIVERSES :
+## INFORMATIONS DIVERSES :
   - Style : Dans l'objectif de priviligier l'aspect "backend" du site et par manque de temps, nous n'avons pas pu soigner
             le style des pages autant que nous l'aurions souhaité. Ainsi, l'apparence générale des pages continent se trouve
             être très bancale. Cependant, il est certain qu'à notre stade d'avancement actuel, nous pourrions nous pencher sur
@@ -51,7 +52,8 @@ INFORMATIONS DIVERSES :
                                     souhaitions au départ.
 
   - Découpage du code : Pour des raisons de praticité de développement, nous avons choisi d'écrire le template html et css dans la
-                        partie "template" du composant concerné plutôt que de créer des fichiers html et css pour chaque.
+                        partie "template" du composant concerné plutôt que de créer des fichiers html et css pour chaque excepté
+                        pour l'accueil qui possède son propre fichier de style.
 
                         Nous avons également pris le parti d'écrire le style à l'intérieur des balises html pour plus de rapidité
                         de développement. Avec plus de temps, nous aurions pu séparer ceux-là pour plus de lisibilité.
@@ -78,7 +80,8 @@ INFORMATIONS DIVERSES :
                            bouts de requêtes http, nous avons pris le parti d'écrire les requêtes directement dans les appels à
                            la fonction get() pour éviter toute mauvaise surprise.
 
-  - Images : toutes nos images se trouvent dans le dossier "assets"
+  - Images : toutes nos images stockée en local se trouvent dans le dossier "assets". Les autres sont récupérées via des liens
+             internet.
 
   - Tests : Faute de temps et du fait des nombreuses difficultées que nous avons rencontré avec l'utilisation de l'api, nous
             n'avons malheureusement pas eu le temps de programmer des tests pour nos différents composants.
